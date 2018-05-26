@@ -13,12 +13,15 @@ public class Place implements Serializable {
     private String mPhone;
     private String mWebPage;
     private int mImageResourceId;
-    private double mLongitude;
     private double mLatitude;
+    private double mLongitude;
 
-    public Place(String name, int category) {
+
+    public Place(String name, int category, double latitude, double longitude) {
         mName = name;
         mCategory = category;
+        mLatitude = latitude;
+        mLongitude = longitude;
         City.getInstance().addPlace(this);
     }
 
@@ -30,5 +33,11 @@ public class Place implements Serializable {
         return mCategory;
     }
 
+    public double getLatitude() {
+        return mLatitude;
+    }
 
+    public double getLongitude() {
+        return mLongitude;
+    }
 }

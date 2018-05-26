@@ -11,16 +11,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PlaceFragment extends Fragment {
+public class PlaceFragment extends Fragment implements OnMapReadyCallback {
 
     List<Place> places = null;
     View rootView = null;
-
 
     public PlaceFragment() {
         // Required empty public constructor
@@ -42,10 +48,17 @@ public class PlaceFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        MapView mapView;
+
+        mapView = view.findViewById(R.id.map);
+        mapView.onCreate(savedInstanceState);
+        mapView.onResume();
+        mapView.getMapAsync(this);
+
         Bundle args = getArguments();
         places = City.getInstance().getPlacesByCategory(args.getInt("category", 0));
 
-        RecyclerView placesRecyclerView = (RecyclerView) rootView.findViewById(R.id.places_recycler_view);
+        RecyclerView placesRecyclerView = rootView.findViewById(R.id.places_recycler_view);
         placesRecyclerView.setHasFixedSize(true);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
@@ -53,5 +66,24 @@ public class PlaceFragment extends Fragment {
 
         PlaceAdapter adapter = new PlaceAdapter(getContext(), places);
         placesRecyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+        GoogleMap mMap = googleMap;
+
+        for (Place place : places) {
+
+            LatLng location = new LatLng(place.getLatitude(), place.getLongitude());
+
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
+
+            mMap.addMarker(new MarkerOptions().position(location).title("Marker in" + place.getName()));
+            //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+            //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
+            //mMap.animateCamera(CameraUpdateFactory.zoomIn());
+        }
+
     }
 }

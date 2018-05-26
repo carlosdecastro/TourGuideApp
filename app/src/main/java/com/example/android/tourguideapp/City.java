@@ -1,6 +1,5 @@
 package com.example.android.tourguideapp;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
