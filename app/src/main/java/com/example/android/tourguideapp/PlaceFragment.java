@@ -4,6 +4,7 @@ package com.example.android.tourguideapp;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -58,7 +59,7 @@ public class PlaceFragment extends Fragment implements OnMapReadyCallback {
         Bundle args = getArguments();
         places = City.getInstance().getPlacesByCategory(args.getInt("category", 0));
 
-        RecyclerView placesRecyclerView = rootView.findViewById(R.id.places_recycler_view);
+        final RecyclerView placesRecyclerView = rootView.findViewById(R.id.places_recycler_view);
         placesRecyclerView.setHasFixedSize(true);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
@@ -66,24 +67,30 @@ public class PlaceFragment extends Fragment implements OnMapReadyCallback {
 
         PlaceAdapter adapter = new PlaceAdapter(getContext(), places);
         placesRecyclerView.setAdapter(adapter);
+
+        FloatingActionButton floatingButton = view.findViewById(R.id.floatingScrollButton);
+        floatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                placesRecyclerView.smoothScrollToPosition(0);
+            }
+        });
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        GoogleMap mMap = googleMap;
-
         for (Place place : places) {
 
             LatLng location = new LatLng(place.getLatitude(), place.getLongitude());
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
 
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
-
-            mMap.addMarker(new MarkerOptions().position(location).title("Marker in" + place.getName()));
+            googleMap.addMarker(new MarkerOptions().position(location).title("Marker in: " + place.getName()));
             //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
             //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
             //mMap.animateCamera(CameraUpdateFactory.zoomIn());
         }
 
     }
+
 }
