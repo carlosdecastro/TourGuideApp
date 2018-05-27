@@ -30,7 +30,7 @@
         android:layout_margin="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/common_google_signin_btn_icon_dark"
+        android:src="@drawable/up"
         app:layout_anchor="@id/map"
         app:layout_anchorGravity="bottom|right|end" />
 

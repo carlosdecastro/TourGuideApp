@@ -1,7 +1,7 @@
 package com.example.android.tourguideapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class PlaceActivity extends AppCompatActivity {
@@ -15,6 +15,5 @@ public class PlaceActivity extends AppCompatActivity {
 
         TextView nameTextView = findViewById(R.id.name_text_view);
         nameTextView.setText(place.getName());
-
     }
 }

@@ -1,11 +1,16 @@
 package com.example.android.tourguideapp;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextClock;
+import android.widget.TextView;
 
 
 /**
@@ -23,7 +28,43 @@ public class CityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_city, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_city, container, false);
+
+        TextView cityNameTextView = rootView.findViewById(R.id.city_name_text_view);
+        cityNameTextView.setText(City.getName());
+
+        TextClock timeTextClock = rootView.findViewById(R.id.city_time_text_clock);
+        timeTextClock.setTimeZone("GMT+02:00");
+
+        ImageView faceBookImageView = rootView.findViewById(R.id.city_facebook_image_view);
+        faceBookImageView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String facebookId = "https://www.facebook.com/TurismodeSantiago";
+                startActivity(new Intent(Intent.ACTION_DEFAULT, Uri.parse(facebookId)));
+            }
+
+        });
+
+        ImageView instagramImageView = rootView.findViewById(R.id.city_instagram_image_view);
+        instagramImageView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String instagramId = "https://www.instagram.com/santiagoturismo/";
+                startActivity(new Intent(Intent.ACTION_DEFAULT, Uri.parse(instagramId)));
+            }
+
+        });
+
+        ImageView twitterImageView = rootView.findViewById(R.id.city_twitter_image_view);
+        twitterImageView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String instagramId = "https://twitter.com/santiagoturismo";
+                startActivity(new Intent(Intent.ACTION_DEFAULT, Uri.parse(instagramId)));
+            }
+
+        });
+
+
+        return rootView;
     }
 
 }

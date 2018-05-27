@@ -16,6 +16,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -29,6 +30,7 @@ public class PlaceFragment extends Fragment implements OnMapReadyCallback {
     List<Place> places = null;
     View rootView = null;
 
+
     public PlaceFragment() {
         // Required empty public constructor
     }
@@ -40,18 +42,9 @@ public class PlaceFragment extends Fragment implements OnMapReadyCallback {
 
         rootView = inflater.inflate(R.layout.fragment_place, container, false);
 
-
-        // Inflate the layout for this fragment
-        return rootView;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
         MapView mapView;
 
-        mapView = view.findViewById(R.id.map);
+        mapView = rootView.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         mapView.onResume();
         mapView.getMapAsync(this);
@@ -68,29 +61,52 @@ public class PlaceFragment extends Fragment implements OnMapReadyCallback {
         PlaceAdapter adapter = new PlaceAdapter(getContext(), places);
         placesRecyclerView.setAdapter(adapter);
 
-        FloatingActionButton floatingButton = view.findViewById(R.id.floatingScrollButton);
+        FloatingActionButton floatingButton = rootView.findViewById(R.id.floatingScrollButton);
         floatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 placesRecyclerView.smoothScrollToPosition(0);
             }
         });
+
+
+        // Inflate the layout for this fragment
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
+        int color = R.drawable.circle_blue;
+
         for (Place place : places) {
+
+            if (place.getCategory() == 1)
+                color = R.drawable.circle_blue;
+            if (place.getCategory() == 2)
+                color = R.drawable.circle_red;
+            if (place.getCategory() == 3)
+                color = R.drawable.circle_amber;
+            if (place.getCategory() == 4)
+                color = R.drawable.circle_brown;
 
             LatLng location = new LatLng(place.getLatitude(), place.getLongitude());
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
 
-            googleMap.addMarker(new MarkerOptions().position(location).title("Marker in: " + place.getName()));
+            googleMap.addMarker(new MarkerOptions().position(location).icon(BitmapDescriptorFactory.fromResource(color)).title(place.getName()));
+
+            //.defaultMarker(color))
+
+
             //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
             //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
             //mMap.animateCamera(CameraUpdateFactory.zoomIn());
         }
-
     }
-
 }

@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -16,39 +17,18 @@ import java.util.List;
 public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder> {
 
 
-    public static class PlaceViewHolder extends RecyclerView.ViewHolder {
-
-        CardView mCardView;
-        TextView mName;
-        TextView mCategory;
-        //ImageView personPhoto;
-
-        PlaceViewHolder(View itemView) {
-            super(itemView);
-            mCardView = (CardView)itemView.findViewById(R.id.place_card_view);
-            mName = (TextView)itemView.findViewById(R.id.person_name);
-            mCategory = (TextView)itemView.findViewById(R.id.person_age);
-        }
-    }
-
-    private List<Place> mPlaces;
-    private Context mContext;
-
-    public PlaceAdapter(Context context, List<Place> places){
-        mContext = context;
-        mPlaces = places;
-    }
-
     @Override
     public void onBindViewHolder(@NonNull PlaceViewHolder holder, final int position) {
 
         holder.mName.setText(mPlaces.get(position).getName());
+        holder.mImage.setBackgroundResource(mPlaces.get(position).getImageResourceId());
+        holder.mCategory.setText(mPlaces.get(position).getShortDescription());
         //holder.mName.setText(mPlaces.get(position).getCategory());
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Place currentPlace = (Place) mPlaces.get(position);
+                Place currentPlace = mPlaces.get(position);
 
                 Intent playIntent = new Intent(mContext,PlaceActivity.class);
                 playIntent.putExtra("place", currentPlace);
@@ -56,6 +36,31 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             }
         });
 
+    }
+
+    private List<Place> mPlaces;
+    private Context mContext;
+
+    public PlaceAdapter(Context context, List<Place> places) {
+        mContext = context;
+        mPlaces = places;
+    }
+
+    public static class PlaceViewHolder extends RecyclerView.ViewHolder {
+
+        CardView mCardView;
+        TextView mName;
+        TextView mCategory;
+        LinearLayout mImage;
+        //ImageView personPhoto;
+
+        PlaceViewHolder(View itemView) {
+            super(itemView);
+            mCardView = itemView.findViewById(R.id.place_card_view);
+            mName = itemView.findViewById(R.id.person_name);
+            mCategory = itemView.findViewById(R.id.person_age);
+            mImage = itemView.findViewById(R.id.place_image);
+        }
     }
 
     @Override

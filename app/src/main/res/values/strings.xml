@@ -4,4 +4,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_place">PlaceActivity</string>
+    <string name="place_to_see_1_description">The City of Culture of Galicia is a complex of cultural buildings in Santiago de Compostela, A Coruña, Galicia, Spain, designed by a group of architects led by Peter Eisenman.</string>
+    <string name="place_to_see_2_description">The City of Culture of Galicia is a complex of cultural buildings in Santiago de Compostela, A Coruña, Galicia, Spain, designed by a group of architects led by Peter Eisenman.</string>
+    <string name="place_to_see_3_description">The City of Culture of Galicia is a complex of cultural buildings in Santiago de Compostela, A Coruña, Galicia, Spain, designed by a group of architects led by Peter Eisenman.</string>
+    <string name="place_to_see_4_description">The City of Culture of Galicia is a complex of cultural buildings in Santiago de Compostela, A Coruña, Galicia, Spain, designed by a group of architects led by Peter Eisenman.</string>
+    <string name="place_to_see_5_description">The City of Culture of Galicia is a complex of cultural buildings in Santiago de Compostela, A Coruña, Galicia, Spain, designed by a group of architects led by Peter Eisenman.</string>
+
 </resources>
