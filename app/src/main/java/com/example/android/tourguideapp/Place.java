@@ -13,17 +13,19 @@ public class Place implements Serializable {
     private String mPhone;
     private String mWebPage;
     private int mImageResourceId;
+    private int mImageResourceFullId;
     private double mLatitude;
     private double mLongitude;
 
 
-    public Place(String name, String shortDescription, int category, double latitude, double longitude, int imageResourceId) {
+    public Place(String name, String shortDescription, int category, double latitude, double longitude, int imageResourceId, int imageResourceFullId) {
         mName = name;
         mCategory = category;
         mLatitude = latitude;
         mLongitude = longitude;
         mImageResourceId = imageResourceId;
         mShortDescription = shortDescription;
+        mImageResourceFullId = imageResourceFullId;
         City.getInstance().addPlace(this);
     }
 
@@ -50,4 +52,9 @@ public class Place implements Serializable {
     public String getShortDescription() {
         return mShortDescription;
     }
+
+    public int getImageResourceFullId() {
+        return mImageResourceFullId;
+    }
+
 }
