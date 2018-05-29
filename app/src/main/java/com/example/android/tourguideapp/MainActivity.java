@@ -35,17 +35,17 @@ public class MainActivity extends AppCompatActivity {
             Place placeToEat5 = new Place("Izakaya Markesa", "Short Description", 2, 42.883581, -8.539484, R.drawable.markesa, R.drawable.markesa_full);
             Place placeToEat3 = new Place("O Curro Da Parra", "Short Description", 2, 42.882177, -8.541470, R.drawable.curro_parra, R.drawable.curro_da_parra_full);
 
-            /*Place placeToDo1 = new Place("CGAC ", "Short Description", 3, 42.883117, -8.539665, R.drawable.cgac);
-            Place placeToDo2 = new Place("Fundación Eugenio Granell ", "Short Description", 3, 42.877681, -8.544904, R.drawable.eugenio_granell);
-            Place placeToDo3 = new Place("Museo do Pobo Galego", "Short Description", 3, 42.881438, -8.543306, R.drawable.pobo_galego);
-            Place placeToDo5 = new Place("Zona C ", "Short Description", 3, 42.882188, -8.539069, R.drawable.zona_c);
-            Place placeToDo4 = new Place("Sala Riquela", "Short Description", 3, 42.880053, -8.542221, R.drawable.riquela);
+            Place placeToDo1 = new Place("CGAC ", "Short Description", 3, 42.883117, -8.539665, R.drawable.cgac, R.drawable.cgac_full);
+            Place placeToDo2 = new Place("Fundación Eugenio Granell ", "Short Description", 3, 42.877681, -8.544904, R.drawable.eugenio_granell, R.drawable.eugenio_granell_full);
+            Place placeToDo3 = new Place("Museo do Pobo Galego", "Short Description", 3, 42.881438, -8.543306, R.drawable.pobo_galego, R.drawable.pobo_galego_full);
+            Place placeToDo5 = new Place("Zona C ", "Short Description", 3, 42.882188, -8.539069, R.drawable.zona_c, R.drawable.zona_c_full);
+            Place placeToDo4 = new Place("Sala Riquela", "Short Description", 3, 42.880053, -8.542221, R.drawable.riquela, R.drawable.riquela_full);
 
-            Place placeToSleep1 = new Place("Hotel Costavella","Short Description",4,42.883141, -8.543356,R.drawable.costavella);
-            Place placeToSleep2 = new Place("Hotel Herradura","Short Description",4,42.876187, -8.548923,R.drawable.herradura);
-            Place placeToSleep3 = new Place("Hotel Moure","Short Description",4,42.883655, -8.542866,R.drawable.moure);
-            Place placeToSleep4 = new Place("Hotel Rua Vilar","Short Description",4,42.879498, -8.544314,R.drawable.rua_vilar);
-            Place placeToSleep5= new Place("Hostal de los Reyes Católicos","Short Description",4,42.881485, -8.545869,R.drawable.reis_catolicos);*/
+            Place placeToSleep1 = new Place("Hotel Costavella", "Short Description", 4, 42.883141, -8.543356, R.drawable.costavella, R.drawable.costavella_full);
+            Place placeToSleep2 = new Place("Hotel Herradura", "Short Description", 4, 42.876187, -8.548923, R.drawable.herradura, R.drawable.herradura_full);
+            Place placeToSleep3 = new Place("Hotel Moure", "Short Description", 4, 42.883655, -8.542866, R.drawable.moure, R.drawable.moure_full);
+            Place placeToSleep4 = new Place("Hotel Rua Vilar", "Short Description", 4, 42.879498, -8.544314, R.drawable.rua_vilar, R.drawable.rua_vilar_full);
+            Place placeToSleep5 = new Place("Hostal de los Reyes Católicos", "Short Description", 4, 42.881485, -8.545869, R.drawable.reis_catolicos, R.drawable.reis_catolicos_full);
 
 
             City.setInitialized(true);
