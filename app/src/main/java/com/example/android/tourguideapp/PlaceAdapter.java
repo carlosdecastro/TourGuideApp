@@ -22,8 +22,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
 
         holder.mName.setText(mPlaces.get(position).getName());
         holder.mImage.setBackgroundResource(mPlaces.get(position).getImageResourceId());
-        holder.mCategory.setText(mPlaces.get(position).getShortDescription());
-        //holder.mName.setText(mPlaces.get(position).getCategory());
+        //holder.mCategory.setText(mPlaces.get(position).getShortDescription());
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,13 +51,12 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
         TextView mName;
         TextView mCategory;
         LinearLayout mImage;
-        //ImageView personPhoto;
 
         PlaceViewHolder(View itemView) {
             super(itemView);
             mCardView = itemView.findViewById(R.id.place_card_view);
-            mName = itemView.findViewById(R.id.person_name);
-            mCategory = itemView.findViewById(R.id.person_age);
+            mName = itemView.findViewById(R.id.place_name);
+            mCategory = itemView.findViewById(R.id.place_description);
             mImage = itemView.findViewById(R.id.place_image);
         }
     }

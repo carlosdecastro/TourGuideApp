@@ -6,12 +6,7 @@ public class Place implements Serializable {
 
     private String mName;
     private int mCategory;
-    private String mAddress;
     private String mShortDescription;
-    private String mOpeningHours;
-    private double mPrice;
-    private String mPhone;
-    private String mWebPage;
     private int mImageResourceId;
     private int mImageResourceFullId;
     private double mLatitude;

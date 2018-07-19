@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:fontFamily="sans-serif"
-            android:text="Santiago de Compostela is the capital of the autonomous community of Galicia, in northwestern Spain. The city has its origin in the shrine of Saint James the Great, now the Cathedral of Santiago de Compostela, as the destination of the Way of St. James, a leading Catholic pilgrimage route since the 9th century. In 1985, the city's Old Town was designated a UNESCO World Heritage Site."
+            android:text="@string/city_description"
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textSize="14sp"

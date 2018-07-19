@@ -10,5 +10,32 @@
     <string name="place_to_see_3_description">The City of Culture of Galicia is a complex of cultural buildings in Santiago de Compostela, A Coruña, Galicia, Spain, designed by a group of architects led by Peter Eisenman.</string>
     <string name="place_to_see_4_description">The City of Culture of Galicia is a complex of cultural buildings in Santiago de Compostela, A Coruña, Galicia, Spain, designed by a group of architects led by Peter Eisenman.</string>
     <string name="place_to_see_5_description">The City of Culture of Galicia is a complex of cultural buildings in Santiago de Compostela, A Coruña, Galicia, Spain, designed by a group of architects led by Peter Eisenman.</string>
-
+    <string name="categoryOne">See</string>
+    <string name="category_two">Restaurant</string>
+    <string name="category_three">Thing to do</string>
+    <string name="category_five">Hotel</string>
+    <string name="city_facebook">https://www.facebook.com/TurismodeSantiago</string>
+    <string name="city_twitter">https://www.instagram.com/santiagoturismo/</string>
+    <string name="city_instagram">https://twitter.com/santiagoturismo</string>
+    <string name="city_description">Santiago de Compostela is the capital of the autonomous community of Galicia, in northwestern Spain. The city has its origin in the shrine of Saint James the Great, now the Cathedral of Santiago de Compostela, as the destination of the Way of St. James, a leading Catholic pilgrimage route since the 9th century. In 1985, the city\'s Old Town was designated a UNESCO World Heritage Site.</string>
+    <string name="place_to_see_1_name">Cidade Da Cultura</string>
+    <string name="place_to_see_2_name">Catedral</string>
+    <string name="place_to_see_3_name">San Martín Pinario</string>
+    <string name="place_to_see_4_name">Colegiata de Sar</string>
+    <string name="place_to_see_5_name">Facultade de Xeografía e Historia</string>
+    <string name="place_to_eat_1_name">Casa Marcelo</string>
+    <string name="place_to_eat_2_name">La Tafona</string>
+    <string name="place_to_eat_3_name">A Maceta</string>
+    <string name="place_to_eat_4_name">Izakaya Markesa</string>
+    <string name="place_to_eat_5_name">O Curro Da Parra</string>
+    <string name="place_to_do_1_name">CGAC</string>
+    <string name="place_to_do_2_name">Fundación Eugenio Granell</string>
+    <string name="place_to_do_3_name">Museo do Pobo Galego</string>
+    <string name="place_to_do_4_name">Zona C</string>
+    <string name="place_to_do_5_name">Sala Riquela</string>
+    <string name="place_to_sleep_1_name">Hotel Costavella</string>
+    <string name="place_to_sleep_2_name">Hotel Herradura</string>
+    <string name="place_to_sleep_3_name">Hotel Moure</string>
+    <string name="place_to_sleep_4_name">Hotel Rua Vilar</string>
+    <string name="place_to_sleep_5_name">Hostal de los Reyes Católicos</string>
 </resources>

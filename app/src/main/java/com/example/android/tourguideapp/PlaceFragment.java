@@ -101,12 +101,6 @@ public class PlaceFragment extends Fragment implements OnMapReadyCallback {
 
             googleMap.addMarker(new MarkerOptions().position(location).icon(BitmapDescriptorFactory.fromResource(color)).title(place.getName()));
 
-            //.defaultMarker(color))
-
-
-            //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
-            //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
-            //mMap.animateCamera(CameraUpdateFactory.zoomIn());
         }
     }
 }

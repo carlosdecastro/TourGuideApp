@@ -39,7 +39,7 @@ public class CityFragment extends Fragment {
         ImageView faceBookImageView = rootView.findViewById(R.id.city_facebook_image_view);
         faceBookImageView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String facebookId = "https://www.facebook.com/TurismodeSantiago";
+                String facebookId = getString(R.string.city_facebook);
                 startActivity(new Intent(Intent.ACTION_DEFAULT, Uri.parse(facebookId)));
             }
 
@@ -48,7 +48,7 @@ public class CityFragment extends Fragment {
         ImageView instagramImageView = rootView.findViewById(R.id.city_instagram_image_view);
         instagramImageView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String instagramId = "https://www.instagram.com/santiagoturismo/";
+                String instagramId = getString(R.string.city_twitter);
                 startActivity(new Intent(Intent.ACTION_DEFAULT, Uri.parse(instagramId)));
             }
 
@@ -57,7 +57,7 @@ public class CityFragment extends Fragment {
         ImageView twitterImageView = rootView.findViewById(R.id.city_twitter_image_view);
         twitterImageView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String instagramId = "https://twitter.com/santiagoturismo";
+                String instagramId = getString(R.string.city_instagram);
                 startActivity(new Intent(Intent.ACTION_DEFAULT, Uri.parse(instagramId)));
             }
 

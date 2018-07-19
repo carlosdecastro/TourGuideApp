@@ -16,24 +16,22 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/person_name"
+            android:id="@+id/place_name"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
             android:gravity="bottom"
             android:textAppearance="?android:textAppearanceMedium"
-            android:text="Ciudad de la cultura"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/person_age"
+            android:id="@+id/place_description"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
-            android:text="Hola"
             android:gravity="top"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@android:color/white" />
